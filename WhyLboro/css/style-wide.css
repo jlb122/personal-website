@@ -1,0 +1,38 @@
+
+/* This CSS document works like the normal CSS document, just widens the page and makes text bigger.
+ While also ensuring content is not viewable when active so it is hidden further away as it could possibly seen on a normal screen without this CSS  */
+
+
+/*********************************************************************************/
+/* Basic                                                                         */
+/*********************************************************************************/
+
+	body,input,textarea,select {
+		font-size: 17pt;
+	}
+	
+	/* Main */
+		
+		.main {
+		}
+		
+			.main.style2 {
+			}
+			
+				.main.style2 .content {
+					width: 50%;
+				}
+			
+					.main.style2.right .content {
+						left: 50%;
+					}
+
+				.main.style2.inactive {
+				}
+
+					.main.style2.inactive .content {
+					}
+
+						.main.style2.inactive.left .content {
+							left: -50%;
+						}

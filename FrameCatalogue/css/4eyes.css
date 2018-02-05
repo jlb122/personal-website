@@ -1,0 +1,721 @@
+/*custom font*/
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+
+/*basic reset*/
+* {margin: 0; padding: 0; }
+
+html {
+	height: 100%
+	/*Image only BG fallback*/
+background-color: #474747;
+background-image: url(../bright-squares.png);
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+	/*background = gradient + image pattern combo*/
+background-color: #474747;
+background-image: url(../bright-squares.png);
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+body {
+	font-family: montserrat, arial, verdana;
+	overflow-x:hidden;
+}
+/*form styles*/
+#msform {
+	width: 85%;
+	margin: 20px auto;
+	text-align: center;
+	position: relative;
+}
+#msform fieldset {
+	background: white;
+	border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 0 50px 2px rgba(0, 0, 0, 0.4);
+	padding: 15px;	
+	box-sizing: border-box;
+	min-width:100%;
+	
+	/*stacking fieldsets above each other*/
+	position: absolute;
+}
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+	display: none;
+}
+/*inputs*/
+#msform input, #msform textarea, #msform button {
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: .5px;
+	max-width: 100%;
+	box-sizing: border-box;
+	font-family: montserrat;
+	font-size: 13px;
+}
+/*buttons*/
+#msform .action-button {
+	width: 7.5em;
+	background: #ed145a;
+	font-weight: bold;
+	color: white;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: .5em;
+	font-size:16px;
+}
+#msform .action-button:hover, #msform .action-button:focus {
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #1A123F;
+}
+
+#msform .action-button-previous {
+	width: 7.5em;
+	background: #ed145a;
+	font-weight: bold;
+	color: white;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: .5em;
+	font-size:16px;
+
+}
+#msform .action-button-previous:hover, #msform .action-button-previous:focus {
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #1A123F;
+}
+
+
+
+/*buttons*/
+#msform .action-buttonage {
+	max-width: 100%;
+	font-weight: bold;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	margin: .5%;
+	font-size: 36px;	
+	padding: 2% 2% 2% 2%;
+	display:inline-block;
+
+}
+
+
+/*buttonshape*/
+#msform .action-buttonshape {
+	max-width: 100%;
+	font-weight: bold;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	margin: 1.5%;
+	font-size: 60px;	
+	padding: 2% 2% 2% 2%;
+	display:inline-block;
+}
+
+
+input[type='radio'], input[type='checkbox']{
+	display:none;
+}
+
+input[type='radio']:checked+label, input[type='checkbox']:checked+label{ 
+	box-shadow: 0 0 0 3px #1A123F;
+}
+
+#question {
+	position:absolute;top:10px;right:10px;
+ }
+ label{
+margin:.25em 1.5em .25em 1.5em;
+padding:.5em;
+display:inline-block;
+cursor:pointer;}
+
+
+/*headings*/
+.fs-title {
+	font-size: 15px;
+	text-transform: uppercase;
+	color: #2C3E50;
+	margin-bottom: 10px;
+}
+.fs-subtitle {
+	font-weight: normal;
+	font-size: 13px;
+	color: #666;
+	margin-bottom: .2em;
+}
+/*progressbar*/
+#progressbar {
+	margin-bottom: 30px;
+	overflow: hidden;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+}
+#progressbar li {
+	list-style-type: none;
+	color: white;
+	text-transform: uppercase;
+	font-size: 9px;
+	width: 12.5%;
+	float:left;
+	position: relative;
+}
+#progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 20px;
+	line-height: 20px;
+	display: block;
+	font-size: 10px;
+	color: #333;
+	background: white;
+	border-radius: 3px;
+	margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: white;
+	position: absolute;
+	left: -50%;
+	top: 9px;
+	z-index: -1; /*put it behind the numbers*/
+}
+#progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,  #progressbar li.active:after{
+	background: #ed145a;
+	color: white;
+}
+
+label > input{ /* HIDE RADIO */
+  display:none;
+}
+label > input + img{ /* IMAGE STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
+}
+label > input:checked + img{ /* (CHECKED) IMAGE STYLES */
+  border:2px solid #f00;
+}
+
+/*
+Add transition to containers so they can push in and out.
+*/
+#layout,
+#menu,
+.menu-link {
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+/*
+This is the parent `<div>` that contains the menu and the content area.
+*/
+#layout {
+    padding-left: 150px; /* left col width "#menu" */
+    left: 0;
+}
+
+/*
+The content `<div>` is where all your content goes.
+*/
+
+
+
+
+/*
+The `#menu` `<div>` is the parent `<div>` that contains the `.pure-menu` that
+appears on the left side of the page.
+
+By using the combination of `position: fixed; top: 0; bottom:0;`, we can make
+the menu have 100% height and be fixed on the page as the rest of it scrolls.
+*/
+#menu {
+    margin-left: -150px; /* this should be "#menu" width */
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 150px; /* this should be "#menu" width */
+    bottom: 0;
+    z-index: 1; /* so the menu or its navicon stays above all content */
+    background: #1e1547;
+    overflow-y: hidden;
+	overflow-x: hidden;
+    -webkit-overflow-scroll: touch; /* for smooth scrolling on mobile */
+}
+    /*
+    All anchors inside the menu should be styled like this.
+    */
+    #menu a {
+        color: #fff;
+        border: none;
+		font-size:14px;
+	padding: 0.6em 0 0.6em 0.6em;
+    }
+
+    /*
+    Remove all background/borders, since we are applying them to #menu.
+    */
+     #menu .pure-menu,
+     #menu .pure-menu ul {
+        border: none;
+        background: transparent;
+    }
+
+    /*
+    Add that light border to separate items into groups.
+    */
+    #menu .pure-menu ul,
+    #menu .pure-menu .menu-item-divided {
+    }
+        /*
+        Change color of the anchor links on hover/focus.
+        */
+        #menu .pure-menu li a:hover,
+        #menu .pure-menu li a:focus {
+			color: #ed145a;
+        }
+
+    /*
+    This styles the selected menu item `<li>`.
+    */
+    #menu .pure-menu-selected,
+    #menu .pure-menu-heading {
+	        background: #1f8dd6;
+		}
+        /*
+        This styles a link within a selected menu item `<li>`.
+        */
+        #menu .pure-menu-selected a {
+            color: #fff;
+        }
+
+    /*
+    This styles the menu heading.
+    */
+    #menu .pure-menu-heading {
+        color: #fff;
+        margin: 0;
+    }
+
+/* -- Dynamic Button For Responsive Menu -------------------------------------*/
+
+/*
+The button to open/close the Menu is custom-made and not part of Pure. Here's
+how it works:
+*/
+
+/*
+`.menu-link` represents the responsive menu toggle that shows/hides on
+small screens.
+*/
+.menu-link {
+    display: none; /* show this only on small screens */
+    top: 0;
+    left: 150px; /* `#menu`'s width */
+    background: #000;
+    font-size: 10px; /* change this value to increase/decrease button size */
+    z-index: 10;
+    width: 2em;
+    height: auto;
+    padding: 2.2em 1.6em;
+}
+
+    .menu-link span {
+        position: relative;
+        display: block;
+    }
+
+    .menu-link span,
+    .menu-link span:before,
+    .menu-link span:after {
+        background-color: #fff;
+        width: 100%;
+        height: 0.2em;
+    }
+
+        .menu-link span:before,
+        .menu-link span:after {
+            position: absolute;
+            margin-top: -0.6em;
+            content: " ";
+        }
+
+        .menu-link span:after {
+            margin-top: 0.6em;
+        }
+
+
+/* -- Responsive Styles (Media Queries) ------------------------------------- */
+
+/*
+Hides the menu at `767px`, but modify this based on your app's needs.
+*/
+@media (max-width: 1000px) {
+	#msform {
+	margin: 50px auto;
+	}
+	
+	#msform fieldset{
+  padding: 15px 10px 15px 10px;
+}
+    .header {
+        text-align: left;
+    }
+    #menu a {
+		font-size:13.5px;
+    }
+    /*
+    Navigation Push styles.
+    */
+    #layout {
+        position: relative;
+        padding-left: 0;
+    }
+        #layout.active {
+            position: relative;
+            left: 150px;
+        }
+            #layout.active #menu {
+                left: 150px;
+                width: 200px;
+            }
+
+    #menu {
+        left: -150px;
+    }
+
+    .menu-link {
+        position: fixed;
+        left: 0;
+        display: block; /* show the button on small screens */
+    }
+
+    #layout.active .menu-link {
+        left: 200px;
+    }
+}
+
+.pure-menu ul{position:absolute;visibility:hidden}
+.pure-menu.pure-menu-open{visibility:visible;z-index:2;width:100%}
+.pure-menu ul{left:-10000px;list-style:none;margin:0 0 0 0;padding:0;top:-10000px;z-index:1}
+.pure-menu>ul{position:relative}
+.pure-menu-open>ul{left:0;top:0;visibility:visible}
+.pure-menu-open>ul:focus{outline:0}
+.pure-menu li{position:relative}
+.pure-menu a,.pure-menu .pure-menu-heading{display:block;color:inherit;line-height:1.5em;padding:5px 20px;text-decoration:none;}
+.pure-menu.pure-menu-horizontal>.pure-menu-heading{display:inline-block;*display:inline;zoom:1;margin:0;vertical-align:middle}
+.pure-menu.pure-menu-horizontal>ul{display:inline-block;*display:inline;zoom:1;vertical-align:middle}
+.pure-menu li a{padding:5px 20px}
+.pure-menu-can-have-children>.pure-menu-label:after{content:'\25B8';float:right;font-family:'Lucida Grande','Lucida Sans Unicode','DejaVu Sans',sans-serif;margin-right:-20px;margin-top:-1px}
+.pure-menu-can-have-children>.pure-menu-label{padding-right:30px}.pure-menu-separator{background-color:#dfdfdf;display:block;height:1px;font-size:0;margin:7px 2px;overflow:hidden}.pure-menu-hidden{display:none}.pure-menu-fixed{position:fixed;top:0;left:0;width:100%}.pure-menu-horizontal li{display:inline-block;*display:inline;zoom:1;vertical-align:middle}.pure-menu-horizontal li li{display:block}.pure-menu-horizontal>.pure-menu-children>.pure-menu-can-have-children>.pure-menu-label:after{content:"\25BE"}.pure-menu-horizontal>.pure-menu-children>.pure-menu-can-have-children>.pure-menu-label{padding-right:30px}.pure-menu-horizontal li.pure-menu-separator{height:50%;width:1px;margin:0 7px}.pure-menu-horizontal li li.pure-menu-separator{height:1px;width:auto;margin:7px 2px}.pure-menu.pure-menu-open,.pure-menu.pure-menu-horizontal li .pure-menu-children{background:#fff;border:1px solid #b7b7b7}.pure-menu.pure-menu-horizontal,.pure-menu.pure-menu-horizontal .pure-menu-heading{border:0}.pure-menu a{border:1px solid transparent;border-left:0;border-right:0}.pure-menu a,.pure-menu .pure-menu-can-have-children>li:after{color:#777}.pure-menu .pure-menu-can-have-children>.pure-menu .pure-menu-open{background:#dedede}.pure-menu .pure-menu-disabled>a{background-image:none;border-color:transparent;cursor:default}.pure-menu .pure-menu-disabled>a,.pure-menu .pure-menu-can-have-children.pure-menu-disabled>a:after{color:#bfbfbf}.pure-menu .pure-menu-heading{color:#565d64;text-transform:uppercase;font-size:90%;margin-top:.5em;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#dfdfdf}.pure-menu .pure-menu-selected a{color:#000}.pure-menu.pure-menu-open.pure-menu-fixed{border:0;border-bottom:1px solid #b7b7b7}.pure-paginator{letter-spacing:-.31em;*letter-spacing:normal;*word-spacing:-.43em;text-rendering:optimizespeed;list-style:none;margin:0;padding:0}.opera-only :-o-prefocus,.pure-paginator{word-spacing:-.43em}.pure-paginator li{display:inline-block;*display:inline;zoom:1;letter-spacing:normal;word-spacing:normal;vertical-align:top;text-rendering:auto}.pure-paginator .pure-button{border-radius:0;padding:.8em 1.4em;vertical-align:top;height:1.1em}.pure-paginator .pure-button:focus,.pure-paginator .pure-button:active{outline-style:none}.pure-paginator .prev,.pure-paginator .next{color:#C0C1C3;text-shadow:0 -1px 0 rgba(0,0,0,.45)}.pure-paginator .prev{border-radius:2px 0 0 2px}.pure-paginator .next{border-radius:0 2px 2px 0}@media (max-width:480px){.pure-menu-horizontal{width:100%}.pure-menu-children li{display:block;border-bottom:1px solid #000}}
+
+input {
+	outline: none;
+}
+
+input[type=search] {
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	font-family: inherit;
+	font-size: 14px;
+}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+	display: none; 
+}
+
+
+input[type=search] {
+	background: #ededed url(../search.png) no-repeat 9px center;
+	border: solid 1px #ccc;
+	padding: 9px 10px 9px 32px;
+	width: 90px;
+	margin:0.6em 0 0.6em 0.4em;
+
+	-webkit-border-radius: 10em;
+	-moz-border-radius: 10em;
+	border-radius: 10em;
+	
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+}
+input[type=search]:focus {
+	width: 110px;
+	background-color: #fff;
+	
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+
+
+input:-moz-placeholder {
+	color: #999;
+}
+input::-webkit-input-placeholder {
+	color: #999;
+}
+.table {
+    font-size: 20px;
+	text-transform: uppercase;
+	color: #2C3E50;
+    margin-left:auto; 
+    margin-right:auto;
+	width: 100%;	
+	border-spacing: 1em;
+
+}
+tbody {
+    vertical-align: top;
+}
+
+th {
+    font-size:18px;
+}
+img {
+    max-width: 8em; 
+	max-height:5em;
+}
+@media (max-width: 1000px) {
+tbody {
+	border-spacing: .5em;
+}
+.table {
+	border-spacing: .5em;
+
+}
+
+#question {
+	position:static;
+ }
+}
+
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+
+.sort {
+display: inline-block
+}
+
+#contain {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    position: relative;    
+	float:right;
+}
+
+#surface1,
+#canvas {
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+#videoElement {
+    width: 200px;
+    height: 200px;
+    background-color: #666;
+}
+    #element_to_pop_up {display:none;margin-top: 50px;}
+	
+iframe{
+min-width:550px;
+min-height:550px;
+}
+.button.b-close, .button.bClose {
+    border-radius: 7px 7px 7px 7px;
+    box-shadow: none;
+    font: bold 131% sans-serif;
+    padding: 0 6px 2px;
+    position: absolute;
+	right: 40px;
+	top: 25px;
+}
+
+.filter {
+    margin-left:auto; 
+    margin-right:auto;
+	max-width: 100%;	
+	border-spacing:.5em;
+}
+.filtersubmit {
+background-color:#ed145a;
+color:white;
+}
+.tablefilter, .request {
+background-color:#ed145a;
+color:white;
+}
+.clear, .empty {
+background-color:#1e1547;
+color:white;
+}
+
+.delete {
+background-color:darkred;
+color:white;
+}
+
+.image img {
+    -webkit-transition: all .3s ease; /* Safari and Chrome */
+  	-moz-transition: all .3s ease; /* Firefox */
+  	-o-transition: all .3s ease; /* IE 9 */
+  	-ms-transition: all .3s ease; /* Opera */
+  	transition: all .3s ease;
+}
+
+.image:hover img {
+    -webkit-transform:scale(1.25); /* Safari and Chrome */
+    -moz-transform:scale(1.25); /* Firefox */
+    -ms-transform:scale(1.25); /* IE 9 */
+    -o-transform:scale(1.25); /* Opera */
+     transform:scale(1.25);
+}
+
+		.zoom {
+			display:inline-block;
+			position: relative;
+			cursor:crosshair;
+		}
+		
+		/* magnifying glass icon */
+		.zoom:after {
+			content:'';
+			display:block; 
+			width:33px; 
+			height:33px; 
+			position:absolute; 
+			top:0;
+			right:0;
+		}
+
+		.zoom img {
+			display: block;
+			cursor:crosshair;
+		}
+
+		.zoom img::selection { background-color: transparent; }
+		
+		.simplegallery .thumbnail .thumb img{border:1px solid #9c9c9c;width:100px; height:47.5px;}
+.simplegallery .thumbnail{margin-top:5px}.simplegallery .thumbnail .thumb{ display:inline-block; text-align:center;max-width:25em;cursor:pointer}
+
+#surface1,
+#container, canvas {
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+#videoElement {
+    width: 200px;
+    height: 200px;
+    border-style: solid;
+    border-color: red;
+	}
+	
+	
+  .ui-tooltip, .arrow:after {
+    background: #ed145a;
+    border: 5px solid white;
+  }
+  .ui-tooltip {
+    padding: 20px 30px;
+    color: white;
+    border-radius: 20px;
+    font: bold 14px "Helvetica Neue", Sans-Serif;
+  }
+  .arrow {
+    width: 70px;
+    height: 16px;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    margin-left: -35px;
+    bottom: -16px;
+  }
+  .arrow.top {
+    top: -16px;
+    bottom: auto;
+  }
+  .arrow.left {
+    left: 20%;
+  }
+  .arrow:after {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: -20px;
+    width: 25px;
+    height: 25px;
+    box-shadow: 6px 5px 9px -9px black;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .arrow.top:after {
+    bottom: -20px;
+    top: auto;
+  }
+  
+  
+  @media (max-width: 700px) {
+	#msform {
+	margin: 50px auto;
+	}
+	
+/*buttons*/
+#msform .action-buttonage {
+	max-width: 100%;
+	font-weight: bold;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	margin-top: 10%;
+	font-size: 36px;	
+	padding: 2% 2% 2% 2%;
+	display:block;
+
+}
+
+
+/*buttonshape*/
+#msform .action-buttonshape {
+	max-width: 100%;
+	font-weight: bold;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	margin-top: 10%;
+	font-size: 60px;	
+	padding: 2% 2% 2% 2%;
+	display:block;
+}
+}
+
+.hello{
+color: #ed145a;
+  border: none;
+  font-size: 14px;
+  padding: 0.6em 0 0.6em 0.6em;
+  }

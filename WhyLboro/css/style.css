@@ -1,0 +1,824 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900);		/*Custom Font */
+@font-face{font-family:'FontAwesome';src:url('font/fontawesome-webfont.eot?v=4.0.1');src:url('font/fontawesome-webfont.eot?#iefix&v=4.0.1') format('embedded-opentype'),url('font/fontawesome-webfont.woff?v=4.0.1') format('woff'),url('font/fontawesome-webfont.ttf?v=4.0.1') format('truetype'),url('font/fontawesome-webfont.svg?v=4.0.1#fontawesomeregular') format('svg');font-weight:normal;font-style:normal}
+/*Custom Font*/
+
+/*********************************************************************************/
+/* Basic                                                                         */
+/*********************************************************************************/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+	margin:0; 	/* Both The Margin and Padding for the website are set to 0 so that */
+	padding:0;  /*other CSS can make it more responsive to screen sizes */
+}
+
+	body {
+		background: #fff;	/* White Background Colour For Body */
+	}
+
+		
+			body.loading * {							/* If the website takes a long time to load then none of the parallax transitions load to help load the data first - set to important  */
+				-moz-transition: none !important;
+				-webkit-transition: none !important;
+				-o-transition: none !important;
+				-ms-transition: none !important;
+				transition: none !important;
+			}
+
+	body,input,textarea,select {							/*Font, font size, colour, letter spacing etc. in general for the forms and text */
+		font-family: 'Source Sans Pro', sans-serif;
+		font-weight: 300;
+		font-size: 18pt;
+		line-height: 1.75em;
+		color: #39454b;
+		letter-spacing: 0.5px;
+	}
+
+	h1,h2,h3,h4,h5,h6 {									/*Font weight, colour for headers */
+		font-weight: 900;
+		color: inherit;
+	}
+
+		
+	h2 {													/*Font size for h2 */
+		font-size: 2.25em;
+		letter-spacing: -2px;
+		line-height: 1.25em;
+	}
+		
+
+
+		header p {										/*Margins and Padding for paragraphs after headers */
+			display: block;
+			margin: 1em 0 0 0;
+			padding: 0 0 0.5em 0;
+		}
+		
+	footer {												/*Margin for footers - mainly used with the arrows*/
+		margin-top: 2em;
+	}
+
+	br.clear {
+		clear: both;
+	}
+
+	/* Sections/Articles */
+	
+		section,											/*Margins at the bottom of sections and articles to make them fit the whole of the screen*/
+		article {
+			margin-bottom: 3em;
+		}
+		
+		section > :last-child,							/*Ensure that the sections and articles margin bottom matches every element that is the last child of its parent*/
+		article > :last-child {
+			margin-bottom: 0;
+		}
+
+		section > .content > :last-child,					/*Ensure that the sections and articles margin bottom matches every element that is the last child of its parent*/
+		article > .content > :last-child {
+			margin-bottom: 0;
+		}
+
+		section:last-child,								/*Ensure that the sections and articles margin bottom matches every element that is the last child of its parent*/
+		article:last-child {
+			margin-bottom: 0;
+		}
+
+		.row > section,									/*Specifies that rows come before the section margin wise*/
+		.row > article {
+			margin-bottom: 0;
+		}
+
+
+
+		ul.menu {										/*Specifies menu section of the websites cursor is set to default*/
+			cursor: default;
+		}
+		
+			ul.menu li {									/*Specifies that the menu is displayed inline and adds margins, padding & line height*/
+				display: inline-block;
+				line-height: 1em;
+				border-left: solid 1px rgba(145,146,147,0.25);
+				padding: 0 0 0 0.5em;
+				margin: 0 0 0 0.5em;
+
+			}
+			
+			ul.menu li:first-child {						/*Specifies the first child of the menu has no padding, border or margin*/
+				border-left: 0;
+				padding-left: 0;
+				margin-left: 0;
+			}
+
+		ul.actions {										/*Specifies actions section of the websites cursor is set to default*/
+			cursor: default;
+		}
+		
+			ul.actions li {								/*Specifies that the actions part is displayed inline and adds margins*/
+				display: inline-block;
+				margin: 0 0 0 0.5em;
+			}
+			
+			ul.actions li:first-child {					/*Specifies the first child of the actions part has no margin*/
+				margin-left: 0;
+			}
+
+	/* Forms */
+
+		form {
+		}
+		
+			form label {
+				display: block;							/*Form displayed in a block style*/
+			}
+		
+			form input[type="text"],						/*For each type of input used there is styling such as width, padding, colour, borders, CSS3 transitions to fade colours in and out*/
+			form input[type="password"],
+			form input[type="email"],
+			form select,
+			form textarea {
+				display: block;
+				width: 100%;
+				padding: 0.75em;
+				background: none;
+				border: solid 2px rgba(185,186,187,0.25);
+				color: inherit;
+				border-radius: 0.5em;
+				outline: none;
+
+				-moz-appearance: none;
+				-webkit-appearance: none;
+				-o-appearance: none;
+				-ms-appearance: none;
+
+				-moz-transition: all 0.2s ease-in-out, color 0.2s ease-in-out;
+				-webkit-transition: all 0.2s ease-in-out, color 0.2s ease-in-out;
+				-o-transition: all 0.2s ease-in-out, color 0.2s ease-in-out;
+				-ms-transition: all 0.2s ease-in-out, color 0.2s ease-in-out;
+				transition: all 0.2s ease-in-out, color 0.2s ease-in-out;
+			}
+
+				form input[type="text"]:hover,			/*Uses previous CSS to make use of the hover effect which would add a blue colour*/
+				form input[type="password"]:hover,
+				form input[type="email"]:hover,
+				form select:hover,
+				form textarea:hover {
+				}
+
+				form input[type="text"]:focus,			/*Uses previous CSS to make use of the focus effect which would add a blue colour*/
+				form input[type="password"]:focus,
+				form input[type="email"]:focus,
+				form select:focus,
+				form textarea:focus {
+					border-color: #9ac8e9;
+				}
+
+			form input[type="text"],						/*Specifies light height for input types*/
+			form input[type="password"],
+			form input[type="email"],
+			form select {
+				line-height: 1em;
+			}
+				
+			form textarea {								/*Specifies minimum height for the form text area which also helps for responsiveness as user wouldn't want the text area to small*/
+				min-height: 8em;
+			}
+
+	/* Buttons */
+		
+		.button {
+			background-color: #98c593;					/*Specifies multiple CSS properties for the buttons used - such as the submit button, arrowed down buttons. Specifies margins, colours, borders, alignment etc...  Also adds transitions to buttons which is  CSS3 property*/
+			border: 0;
+			border-radius: 3.5em;
+			color: #fff;
+			cursor: pointer;
+			display: inline-block;
+			height: 3.5em;
+			line-height: 3.5em;
+			outline: 0;
+			padding: 0 2em 0 2em;
+			position: relative;
+			text-align: center;
+			text-decoration: none;
+
+			-moz-appearance: none;
+			-webkit-appearance: none;
+			-o-appearance: none;
+			-ms-appearance: none;
+
+			-moz-transition: all 0.2s ease-in-out;
+			-webkit-transition: all 0.2s ease-in-out;
+			-o-transition: all 0.2s ease-in-out;
+			-ms-transition: all 0.2s ease-in-out;
+			transition: all 0.2s ease-in-out;
+		}
+
+			.button.down {								/*Specifies more CSS properties about the arrowed down buttons, adds images and widths. The image used is a simple arrow pointing down*/
+				width: 5em;
+				height: 5em;
+				line-height: 4.5em;
+				padding: 0;
+				background-image: url('images/dark-arrow.svg');
+				background-position: center center;
+				background-repeat: no-repeat;
+				text-indent: -10em;
+				overflow: hidden;
+			}
+			
+				.button.down.anchored {					/*There is one anchored button on the website on the second section of the website, this CSS ensures that it is anchored*/
+					bottom: 0;
+					border-bottom: 0;
+					border-radius: 3em 3em 0 0;
+					height: 3.5em;
+					margin-left: -2.5em;
+				}
+			
+			.button.anchored {							/*Like the previous CSS for the anchored down button this ensures that it's in an absolute position at all times which is important for a paralax website*/
+				position: absolute;
+				left: 50%;
+			}
+			
+			.button:hover {								/*If the mouse is hovered over a button it is highlighted*/
+				background-color: #a8d5a3;
+			}
+			
+			.button:active {								/*If the button is clicked, it highlights*/
+				background-color: #88b583;
+			}
+
+			.button.style2 {								/*A class which once added to a button adds transparency and also adds a solid white border*/
+				background-color: transparent;
+				border: solid 2px #e5e6e7;
+				color: inherit;
+			}
+			
+				.button.style2:hover {
+					background-color: rgba(145,146,147,0.035);		/*Specifies a hover colour for this class*/
+				}
+				
+				.button.style2.down {
+					background-image: url('images/arrow.svg');		/*Specifies an arrow image for this class*/
+				}
+
+	/* Box */
+
+		.box {
+			background: #fff;							/*The box is the white box around the form. This specifies borders, padding, background and colours*/
+			color: #39454b;
+			border-style: solid;
+			padding: 2em;
+		}
+		
+
+	/* Main */
+		
+		.main {
+			position: relative;							/*This CSS property refers to each section in the website, it ensures that overflows are hidden so that the parallax feel of the website is maintained. Furthermore it ensures the position is relative and margin is 0 */
+			margin: 0;
+			overflow: hidden;
+		}
+		
+			.main.style1 {								/*This CSS adds to the previous CSS by saying that if style 1 is used then 10em padding is used either side and text is aligned in the center  */
+				text-align: center;
+				padding: 10em 0 10em 0;
+			}
+			
+				.main.style1 h2 {						/* This part of the CSS specifies the header 2 properties if main.style1 is used, used on all sections*/
+					font-size: 4.25em;
+					line-height: 1em;
+					letter-spacing: -4px;
+				}
+				
+				.main.style1 .content {					/* Ensures that CSS has an opacity of 1 and fades in once the user has gone into that section, a bit of CSS3 transitions*/
+					opacity: 1.0;
+
+					-moz-transition: all 1s ease;
+					-webkit-transition: all 1s ease;
+					-o-transition: all 1s ease;
+					-ms-transition: all 1s ease;
+					transition: all 1s ease;
+					
+					-moz-transform: translateZ(0);
+					-webkit-transform: translateZ(0);
+					-o-transform: translateZ(0);
+					-ms-transform: translateZ(0);
+					transform: translateZ(0);
+				}
+				
+			.main.style1.inactive {						/* Nothing happens if the content is inactive */
+			}
+			
+				.main.style1.inactive .content {			/* Nothing happens if the content is inactive */
+					opacity: 0;
+				}
+		
+			.main.style2 {								/* Main.style2 is used for the buttons, like the previous style has similar attributes but without text alignment */
+				padding: 10em 0 10em 0;
+				overflow: hidden;
+			}
+			
+				.main.style2 .content {					/* When main.style2 is being used there is a transition (CSS3) and there is a width of 35% at all times and a relative position */
+					position: relative;
+					width: 35%;
+
+					-moz-transition: all 1s ease;
+					-webkit-transition: all 1s ease;
+					-o-transition: all 1s ease;
+					-ms-transition: all 1s ease;
+					transition: all 1s ease;
+					
+					-moz-transform: translateZ(0);
+					-webkit-transform: translateZ(0);
+					-o-transform: translateZ(0);
+					-ms-transform: translateZ(0);
+					transform: translateZ(0);
+				}
+			
+
+				.main.style2.inactive {					/* Nothing happens if the content is inactive */
+				}
+
+					.main.style2.inactive .content {		/* Nothing happens if the content is inactive */
+					}
+
+					
+		
+			.main.style3 {								/* Main.style3 is used for the contact form, like the previous styles has similar attributes */
+				text-align: center;
+				padding: 2em 0 2em 0;
+			}
+
+				.main.style3 .content {					
+				}
+
+				.main.style3.primary {					/* White background for the primary part of the contact form */
+					background: #fff;
+				}
+			
+				.main.style3.secondary {					/* Another background but for the secondary part of the form */
+					background: #f5f6f7;
+				}
+				
+				
+							.main.style4 {				/*This CSS adds to the previous CSS by saying that if style 4 is used then 10em padding is used either side and text is aligned in the center  */
+				text-align: center;
+				padding: 10em 0 10em 0;
+			}
+			
+				.main.style4 h2 {						/* This part of the CSS specifies the header 2 properties if main.style1 is used, used on all sections*/
+					font-size: 3em;
+					line-height: 1em;
+					letter-spacing: -4px;
+				}
+				
+				.main.style4 .content {					
+
+				}
+				
+	/* Dark */
+	
+		.dark {											/* Dark is a style used for the first two sections, it is started off with making everything white (content) */
+			color: #fff;
+		}
+
+			.dark a {									/* Links also have a white colour */
+				color: #FFF;
+			}
+		
+			.dark .button.style2 {						/* Buttons also inherit the white colour */
+				border-color: inherit;
+				background-color: rgba(64,64,64,0.05);
+			}
+			
+			
+
+				.dark .button.style2:hover {				/* A colour is shown once buttons are hovered over */
+					background-color: rgba(255,255,255,0.1);
+				}
+				
+
+				.dark .button.style2.down {				/* Image for the arrows used in the buttons, can be seen in section 1 */
+					background-image: url('images/dark-arrow.svg');
+				}
+		
+/*********************************************************************************/
+/* Icons                                                                         */
+/* Powered by Font Awesome by Dave Gandy | http://fontawesome.io                 */
+/* Licensed under the SIL OFL 1.1 (font), MIT (CSS)                              */
+/*********************************************************************************/
+
+	.fa {											/* No text decoration for the icons */
+		text-decoration: none;
+	}
+
+		.fa.solo {
+		}
+		
+			.fa.solo span {
+				display: none;
+			}
+
+		.fa:before {									/* Styles for the icons such as size, height etc. Making use of the imported font family FontAwesome. */
+			display:inline-block;
+			font-family: FontAwesome;
+			font-size: 1.25em;
+			text-decoration: none;
+			font-style: normal;
+			font-weight: normal;
+			line-height: 1;
+			-webkit-font-smoothing:antialiased;
+			-moz-osx-font-smoothing:grayscale;
+		}
+
+
+	
+		.fa-twitter-square:before{content:"\f081"}			/* These are some of the icons imported, all social media ones which will be used to help the user find Loughborough on social media */
+		.fa-facebook-square:before{content:"\f082"}
+		.fa-linkedin-square:before{content:"\f08c"}
+		.fa-twitter:before{content:"\f099"}
+		.fa-facebook:before{content:"\f09a"}
+		.fa-google-plus-square:before{content:"\f0d4"}
+		.fa-google-plus:before{content:"\f0d5"}
+		.fa-linkedin:before{content:"\f0e1"}
+		.fa-youtube-square:before{content:"\f166"}
+		.fa-youtube:before{content:"\f167"}
+		.fa-youtube-play:before{content:"\f16a"}
+
+/*********************************************************************************/
+/* Header                                                                        */
+/*********************************************************************************/
+	
+	#header {							/* The header is used on all sections, this CSS ensures it is in a fixed position and adds a white colour to it, as well as other properties */
+		position: fixed;
+		z-index: 10000;
+		left: 0;
+		top: 0;
+		width: 100%;
+		background: #fff;
+		background: rgba(255,255,255,0.95);
+		height: 3em;
+		line-height: 3em;
+		box-shadow: 0 0 0.15em 0 rgba(0,0,0,0.1);
+	}
+	
+	body {								/* The header will have a padding-top 3em from the body, which helps make it full screen */
+		padding-top: 3em;
+	}
+
+	#logo {								/* The Loughborough Logo at the top of the page is styled using this CSS, it is to ensure that it is a certain height and kept in an absolute positon at all times*/
+		position: absolute;
+		left: 1em;
+		top: 0.4em;
+		height: 3em;
+		line-height: 3em;
+		letter-spacing: -1px;
+	}
+	
+		#logo a {						/* The creates a font size for the logo if text was used - useful for if alt is used instead of the logo */
+			font-size: 1.25em;
+		}
+	
+	#nav {								/* Nav is the menu at the top with the links, much like the logo this CSS ensures it's in an aboslute position and at a certain height, very similar to the logo as it's on the same line */
+		position: absolute;
+		right: 0.5em;
+		top: 0;
+		height: 3em;
+		line-height: 3em;
+	}
+
+		#nav ul {						/* As the links are in a list this ensures that there is no margin */
+			margin: 0;
+		}
+
+			#nav ul li {					/* Ensures the list items are displayed in an inline-block and there is a specific font size. Furthermore a margin-left of 0.5em between each list item */
+				display: inline-block;
+				margin-left: 0.5em;
+				font-size: 0.9em;
+			}
+			
+				#nav ul li a {				/* This creates a area around the text which helps make the link clickable, for example if this wasn't used only clicking the text would make it work, so this makes it more responsive and usable if there's a larger area to click */
+					display: block;
+					color: inherit;
+					text-decoration: none;
+					height: 3em;
+					line-height: 3em;
+					padding: 0 0.5em 0 0.5em;
+					outline: 0;
+				}
+				
+
+/*************************************************************************************************************************************************/
+/* Intro - First section has a background and sizing properties incase the image transitions don't work. It also uses an overlay for transparency*/
+/*************************************************************************************************************************************************/
+
+	#intro {															
+		background: url('images/overlay.png'), url('https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xfp1/t31.0-8/10014507_638200692916255_5721348785356849555_o.jpg');
+		background-size: 256px 256px, cover;
+		background-attachment: fixed, fixed;
+		background-position: top left, bottom center;
+		background-repeat: repeat, no-repeat;
+	}
+
+/**********************************************************************************************************************************/
+/* One - Second section with the video, this has the background much like the intro, but this is used. Similar to the previous CSS*/
+/**********************************************************************************************************************************/
+
+	#one {
+		background: url('images/overlay.png'), url('../images/one.jpg');
+		background-size: 256px 256px, cover;
+		background-attachment: fixed, fixed;
+		background-position: top left, center center;
+	}
+	
+	
+	
+/******************************************************************************************************************************************/
+/* Justi - Last section with the justification, this has the background much like the intro, but this is used. Similar to the previous CSS*/
+/******************************************************************************************************************************************/
+
+	#justi {
+		background: url('images/overlay.png'), url('../images/one.jpg');
+		background-size: 256px 256px, cover;
+		background-attachment: fixed, fixed;
+		background-position: top left, center center;
+	}
+
+
+/******************************************************************************************************************************************************************************/
+/* Contact - The contact form (third section) doesn't have a background but this CSS3 eases in the contact box which is usually inactive and hidden using the bottom:-30em CSS*/
+/******************************************************************************************************************************************************************************/
+
+	#contact {
+		padding-bottom: 0;
+		overflow: hidden;
+	}
+	
+		#contact .box {
+			position: relative;
+			bottom: 0;
+			
+			-moz-transition: all 1s ease;
+			-webkit-transition: all 1s ease;
+			-o-transition: all 1s ease;
+			-ms-transition: all 1s ease;
+			transition: all 1s ease;
+			
+			-moz-transform: translateZ(0);
+			-webkit-transform: translateZ(0);
+			-o-transform: translateZ(0);
+			-ms-transform: translateZ(0);
+			transform: translateZ(0);
+			
+		}
+		
+		
+		#contact.inactive {
+		}
+
+			#contact.inactive .box {
+				bottom: -30em;
+			}
+
+/*********************************************************************************************************************************/
+/* Footer - The footer includes the arrows, actions and menu. This CSS adjusts the sizing, positioning, colour of the links used.*/
+/*********************************************************************************************************************************/
+	
+	#footer {
+		position: relative;
+		height: 5em;
+		line-height: 5em;
+		margin: 0;
+		background: #39454b;
+		color: #999;
+		color: rgba(185,186,187,0.5);
+		overflow: hidden;
+	}
+
+		#footer a {
+			color: #999;
+			color: rgba(185,186,187,0.5);
+		}
+
+			#footer a:hover {
+				color: #bbb;
+				color: rgba(185,186,187,1.0);
+			}
+	
+		#footer .actions {
+			position: absolute;
+			left: 1em;
+			top: 0.25em;
+			height: 5em;
+			line-height: 5em;
+			margin: 0;
+		}
+		
+			#footer .actions li {
+				font-size: 1.25em;
+				margin: 0;
+			}
+			
+				#footer .actions li a {
+					padding: 0.5em;
+				}
+		
+		#footer .menu {
+			position: absolute;
+			right: 2em;
+			top: 0;
+			height: 5em;
+			line-height: 5em;
+			margin: 0;
+		}
+		
+			#footer .menu li {
+				font-size: 0.9em;
+			}
+
+/***********************************************************************************************************************************************************************************************************************************************************/
+/* Video - This is the CSS for the video. This CSS adjusts the height, width, z-index, background, transition to ensure that the video fits will work whether the video is supported or not, while also working properly on all devices that can support it*/
+/***********************************************************************************************************************************************************************************************************************************************************/
+					
+			
+			video { 
+				right: 0;
+				bottom: 0;
+				max-width: 100%;
+				max-height: 100%;
+				width: auto;
+				height:auto;
+				z-index: -100;
+				background: url('https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xfp1/t31.0-8/10014507_638200692916255_5721348785356849555_o.jpg') no-repeat;
+				background-size: cover;
+				transition: 1s opacity;
+				}
+
+/************************************/
+/* Image Slideshow - First Section  */
+/************************************/
+
+.cb-slideshow,
+.cb-slideshow:after { 				/* This CSS ensures that the images are in an absolute position and take up the whole screen */
+    position: absolute;			
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 0; 
+}
+
+.cb-slideshow li span { 				/* As the images are in a list and divs are used, this hides the list items and helps the image transitions happen. CSS3 used here */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: transparent;
+    background-size: cover;
+    background-position: 50% 50%;
+    opacity: 0;
+    z-index: 0;
+	-webkit-backface-visibility: hidden;
+    -webkit-animation: imageAnimation 36s linear infinite 0s;
+    -moz-animation: imageAnimation 36s linear infinite 0s;
+    -o-animation: imageAnimation 36s linear infinite 0s;
+    -ms-animation: imageAnimation 36s linear infinite 0s;
+    animation: imageAnimation 36s linear infinite 0s; 
+}
+
+.cb-slideshow li:nth-child(1) span { 				/* First Image - a CSS3 webkit filter is used to adjust the brightness of the image  */
+    background-image: url(../images/1.jpg);
+	-webkit-filter: brightness(60%);
+
+	}
+	
+.cb-slideshow li:nth-child(2) span { 				/* Second Image - a CSS3 webkit filter is used to adjust the brightness of the image while also there is CSS3 timing on this image to delay the span (list item) showing for 6 seconds  */
+    background-image: url(../images/2.jpg);
+    -webkit-animation-delay: 6s;
+    -moz-animation-delay: 6s;
+    -o-animation-delay: 6s;
+    -ms-animation-delay: 6s;
+    animation-delay: 6s; 
+	-webkit-filter: brightness(60%);
+}
+.cb-slideshow li:nth-child(3) span { 				/* Third Image - a CSS3 webkit filter is used to adjust the brightness of the image while also there is CSS3 timing on this image to delay the span (list item) showing for 12 seconds  */
+    background-image: url(../images/3.jpg);
+    -webkit-animation-delay: 12s;
+    -moz-animation-delay: 12s;
+    -o-animation-delay: 12s;
+    -ms-animation-delay: 12s;
+    animation-delay: 12s; 
+	-webkit-filter: brightness(60%);
+}
+.cb-slideshow li:nth-child(4) span { 				/* Fourth Image - a CSS3 webkit filter is used to adjust the brightness of the image while also there is CSS3 timing on this image to delay the span (list item) showing for 18 seconds  */
+    background-image: url(../images/4.jpg);
+    -webkit-animation-delay: 18s;
+    -moz-animation-delay: 18s;
+    -o-animation-delay: 18s;
+    -ms-animation-delay: 18s;
+    animation-delay: 18s; 
+	-webkit-filter: brightness(60%);
+}
+.cb-slideshow li:nth-child(5) span { 				/* Fifth Image - a CSS3 webkit filter is used to adjust the brightness of the image while also there is CSS3 timing on this image to delay the span (list item) showing for 24 seconds  */
+    background-image: url(../images/5.jpg);
+    -webkit-animation-delay: 24s;
+    -moz-animation-delay: 24s;
+    -o-animation-delay: 24s;
+    -ms-animation-delay: 24s;
+    animation-delay: 24s; 
+	-webkit-filter: brightness(60%);
+}
+.cb-slideshow li:nth-child(6) span { 				/* Sixth Image - a CSS3 webkit filter is used to adjust the brightness of the image while also there is CSS3 timing on this image to delay the span (list item) showing for 30 seconds  */
+    background-image: url(../images/6.jpg);
+    -webkit-animation-delay: 30s;
+    -moz-animation-delay: 30s;
+    -o-animation-delay: 30s;
+    -ms-animation-delay: 30s;
+    animation-delay: 30s; 
+	-webkit-filter: brightness(60%);
+}
+.cb-slideshow li:nth-child(2) div { 				/* Second Image - This CSS uses the Div rather than the span to show the second image after 6 seconds */
+    -webkit-animation-delay: 6s;
+    -moz-animation-delay: 6s;
+    -o-animation-delay: 6s;
+    -ms-animation-delay: 6s;
+    animation-delay: 6s; 
+}
+.cb-slideshow li:nth-child(3) div { 				/* Third Image - This CSS uses the Div rather than the span to show the second image after 12 seconds */
+    -webkit-animation-delay: 12s;
+    -moz-animation-delay: 12s;
+    -o-animation-delay: 12s;
+    -ms-animation-delay: 12s;
+    animation-delay: 12s; 
+}
+.cb-slideshow li:nth-child(4) div { 				/* Fourth Image - This CSS uses the Div rather than the span to show the second image after 18 seconds */
+    -webkit-animation-delay: 18s;
+    -moz-animation-delay: 18s;
+    -o-animation-delay: 18s;
+    -ms-animation-delay: 18s;
+    animation-delay: 18s; 
+}
+.cb-slideshow li:nth-child(5) div { 				/* Fifth Image - This CSS uses the Div rather than the span to show the second image after 24 seconds */
+    -webkit-animation-delay: 24s;
+    -moz-animation-delay: 24s;
+    -o-animation-delay: 24s;
+    -ms-animation-delay: 24s;
+    animation-delay: 24s; 
+}
+.cb-slideshow li:nth-child(6) div { 				/* Sixth Image - This CSS uses the Div rather than the span to show the second image after 30 seconds */
+    -webkit-animation-delay: 30s;
+    -moz-animation-delay: 30s;
+    -o-animation-delay: 30s;
+    -ms-animation-delay: 30s;
+    animation-delay: 30s; 
+}
+/* Below is CSS3 for the animation of the images, and when the opacity of the image changes - note percentages are used (easiest way to do timings in CSS3) so that Jquery or Javascript is used. Furthermore there are multiple animations - but all the same, this is so that the animations could work on multiple browsers*/
+
+@-webkit-keyframes imageAnimation { 
+    0% { opacity: 0;
+    -webkit-animation-timing-function: ease-in; }
+    8% { opacity: 1;
+         -webkit-animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+@-moz-keyframes imageAnimation { 
+    0% { opacity: 0;
+    -moz-animation-timing-function: ease-in; }
+    8% { opacity: 1;
+         -moz-animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+@-o-keyframes imageAnimation { 
+    0% { opacity: 0;
+    -o-animation-timing-function: ease-in; }
+    8% { opacity: 1;
+         -o-animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+@-ms-keyframes imageAnimation { 
+    0% { opacity: 0;
+    -ms-animation-timing-function: ease-in; }
+    8% { opacity: 1;
+         -ms-animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+@keyframes imageAnimation { 
+    0% { opacity: 0;
+    animation-timing-function: ease-in; }
+    8% { opacity: 1;
+         animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+
+/* Show at least something when animations not supported */
+.no-cssanimations .cb-slideshow li span{
+	opacity: 1;
+}

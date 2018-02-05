@@ -1,0 +1,11 @@
+
+/* This CSS document is for a normal view of the site, it just changes the font size of the body in general     */
+
+
+/*********************************************************************************/
+/* Basic                                                                         */
+/*********************************************************************************/
+
+	body,input,textarea,select {
+		font-size: 15pt;
+	}

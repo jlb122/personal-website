@@ -1,0 +1,17 @@
+To install the website you need the following program:
+
+- phpMyAdmin program
+
+Using phpMyAdmin find the database that you want to store the tables in and click 'Import' on the header.
+On the 'import' page load the 'database.sql' file given with the website and then click 'Go'
+The database tables should then be imported.
+
+Once the database is installed simply edit the 'config.php' file to match the credentials of the phpMyAdmin login, password and database name. Furthermore also change co-project.lboro.ac.uk to the server your're hosting the website on.
+
+That's it, feel free to contact me if you have any issues.
+
+
+James Bridger
+
+
+
